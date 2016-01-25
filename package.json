@@ -1,0 +1,29 @@
+{
+  "name": "TestAndroid",
+  "version": "0.0.1",
+  "private": true,
+  "config": {
+    "android": {
+      "device": "Nexus 5"
+    }
+  },
+  "scripts": {
+    "start": "./node_modules/react-native-cli/index.js start",
+    "android": "./node_modules/react-native-cli/index.js run-android",
+    "develop-android": "nodemon -L --watch index.android.js --watch js ./node_modules/react-native-cli/index.js run-android",
+    "emulator-android": "emulator -avd $npm_package_name -scale 0.4 -gpu on -memory 2048",
+    "emulator-create-android": "android create avd -n $npm_package_name -t 1 -b x86 --skin 1080x1920 --device \"$npm_package_config_android_device\"",
+    "emulator-delete-android": "android delete avd -n $npm_package_name",
+    "lint": "eslint '**/*.js' --quiet=true"
+  },
+  "dependencies": {
+    "react-native": "^0.18.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "4.1.6",
+    "eslint": "1.10.3",
+    "eslint-plugin-react": "3.13.1",
+    "nodemon": "1.8.1",
+    "react-native-cli": "0.1.7"
+  }
+}
