@@ -11,6 +11,10 @@
     "jsx": true
   },
   "globals": {
+    "jest": true,
+    "describe": true,
+    "it": true,
+    "expect": true
   },
   "rules": {
     "no-spaced-func": 2,

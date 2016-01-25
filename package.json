@@ -7,8 +7,30 @@
       "device": "Nexus 5"
     }
   },
+  "jest": {
+    "scriptPreprocessor": "./node_modules/react-native/jestSupport/preprocessor.js",
+    "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
+    "testRunner": "<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "packager/react-packager/src/Activity/"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "promise",
+      "source-map",
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/fbjs",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ]
+  },
   "scripts": {
     "start": "./node_modules/react-native-cli/index.js start",
+    "test": "jest",
+    "test-watch": "nodemon -w ./js -e js -x npm test",
     "android": "./node_modules/react-native-cli/index.js run-android",
     "develop-android": "nodemon -L --watch index.android.js --watch js ./node_modules/react-native-cli/index.js run-android",
     "emulator-android": "emulator -avd $npm_package_name -scale 0.4 -gpu on -memory 2048",
@@ -17,13 +39,15 @@
     "lint": "eslint '**/*.js' --quiet=true"
   },
   "dependencies": {
-    "react-native": "^0.18.1"
+    "react-native": "https://github.com/facebook/react-native.git"
   },
   "devDependencies": {
     "babel-eslint": "4.1.6",
     "eslint": "1.10.3",
     "eslint-plugin-react": "3.13.1",
+    "jest-cli": "0.8.2",
     "nodemon": "1.8.1",
+    "react-addons-test-utils": "0.14.6",
     "react-native-cli": "0.1.7"
   }
 }
