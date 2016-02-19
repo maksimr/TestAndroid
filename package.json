@@ -8,7 +8,8 @@
     }
   },
   "scripts": {
-    "start": "./node_modules/react-native-cli/index.js start",
+    "start": "rnws start",
+    "bundle": "rnws bundle",
     "android": "./node_modules/react-native-cli/index.js run-android",
     "develop-android": "nodemon -L --watch index.android.js --watch js ./node_modules/react-native-cli/index.js run-android",
     "emulator-android": "emulator -avd $npm_package_name -scale 0.4 -gpu on -memory 2048",
@@ -20,11 +21,19 @@
     "react-native": "^0.18.1"
   },
   "devDependencies": {
+    "babel-core": "6.3.17",
+    "babel-loader": "6.2.0",
+    "babel-preset-es2015": "6.3.13",
+    "babel-preset-react": "6.3.13",
+    "babel-preset-stage-1": "6.3.13",
     "babel-eslint": "4.1.6",
-    "escope": "^3.3.0",
+    "escope": "3.3.0",
     "eslint": "1.10.3",
     "eslint-plugin-react": "3.13.1",
     "nodemon": "1.8.1",
-    "react-native-cli": "0.1.7"
+    "react-native-cli": "0.1.7",
+    "react-native-webpack-server": "0.8.4",
+    "webpack": "1.12.13",
+    "webpack-dev-server": "1.14.1"
   }
 }
